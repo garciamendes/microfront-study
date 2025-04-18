@@ -2,10 +2,9 @@
   "name": "microfront-study",
   "private": true,
   "scripts": {
+    "dev": "turbo run dev --parallel",
     "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "preview": "turbo run preview",
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
@@ -18,7 +17,10 @@
   },
   "packageManager": "npm@10.9.2",
   "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+    "apps/*"
+  ],
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "tailwindcss": "^4.1.4"
+  }
 }
