@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import federation from "@originjs/vite-plugin-federation";
 import path from "path";
+import FullReload from "vite-plugin-full-reload";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -16,9 +17,16 @@ export default defineConfig({
       },
       shared: ["react", "react-dom"],
     }),
+    FullReload(["../admin/dist/assets/*"], {
+      delay: 100,
+      log: true,
+    }),
   ],
   server: {
     port: 3000,
+    watch: {
+      usePolling: true,
+    },
   },
   resolve: {
     alias: {

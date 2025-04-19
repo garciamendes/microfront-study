@@ -23,6 +23,9 @@ export default defineConfig({
     cors: {
       origin: "http://localhost:3000",
     },
+    watch: {
+      usePolling: true,
+    },
   },
   resolve: {
     alias: {
